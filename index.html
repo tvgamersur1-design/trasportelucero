@@ -1,0 +1,877 @@
+<!doctype html>
+
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ferreñafe Express | Transporte y Encomiendas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..700&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#f0e8db",
+              "on-tertiary-fixed-variant": "#554020",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f5f1ea",
+              "outline-variant": "#c4c8bc",
+              "surface-container-highest": "#e4e0d8",
+              "on-tertiary-fixed": "#221a05",
+              primary: "#4a7c59",
+              error: "#b83230",
+              "secondary-fixed-dim": "#d4ccbf",
+              secondary: "#6b6358",
+              "on-surface": "#2e3230",
+              "on-primary-container": "#d8f0de",
+              "tertiary-fixed": "#f8e0a8",
+              "tertiary-container": "#c4a66a",
+              "surface-tint": "#4a7c59",
+              "surface-container": "#f0ece4",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#c8e8d0",
+              "primary-fixed-dim": "#8ecf9e",
+              "on-tertiary-container": "#554020",
+              "on-surface-variant": "#4a4e4a",
+              "surface-variant": "#e4e0d8",
+              "on-secondary-fixed": "#1e1a13",
+              "on-secondary-container": "#5e5548",
+              surface: "#faf6f0",
+              "on-error-container": "#690005",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              background: "#faf6f0",
+              "surface-container-high": "#eae6de",
+              "on-secondary-fixed-variant": "#4a4538",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f5f0e8",
+              "secondary-container": "#f0e8db",
+              "inverse-primary": "#8ecf9e",
+              "on-primary-fixed": "#002110",
+              "inverse-surface": "#2e3230",
+              "error-container": "#ffdad8",
+              "surface-bright": "#faf6f0",
+              "primary-container": "#78a886",
+              "on-primary-fixed-variant": "#2a6038",
+              "on-background": "#2e3230",
+              outline: "#74796e",
+              tertiary: "#705c30",
+              "surface-dim": "#dbd7cf",
+              "tertiary-fixed-dim": "#dcc48e",
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            spacing: {
+              base: "4px",
+              lg: "24px",
+              sm: "8px",
+              md: "16px",
+              "margin-mobile": "16px",
+              "margin-desktop": "64px",
+              xs: "4px",
+              gutter: "16px",
+              xl: "48px",
+            },
+            fontFamily: {
+              "headline-lg": ["Literata", "serif"],
+              "body-md": ["Nunito Sans", "sans-serif"],
+              "label-sm": ["Nunito Sans", "sans-serif"],
+              "headline-lg-mobile": ["Literata", "serif"],
+              "label-md": ["Nunito Sans", "sans-serif"],
+              "display-lg": ["Literata", "serif"],
+              "headline-md": ["Literata", "serif"],
+              "body-lg": ["Nunito Sans", "sans-serif"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-sm": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="w-full top-0 sticky bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none border-b border-outline-variant dark:border-outline z-50"
+    >
+      <div
+        class="flex justify-between items-center h-16 px-margin-desktop max-w-7xl mx-auto"
+      >
+        <div
+          class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:opacity-80"
+        >
+          Transporte Lucero
+        </div>
+        <nav class="hidden md:flex items-center gap-xl">
+          <a
+            class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200"
+            href="#"
+            >Servicios</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
+            href="#"
+            >Rutas</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
+            href="#"
+            >Nosotros</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
+            href="#"
+            >Contacto</a
+          >
+        </nav>
+        <button
+          onclick="openContactModal()"
+          class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-fixed-variant transition-all active:scale-95"
+        >
+          Cotizar Envío
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[600px] flex items-center overflow-hidden bg-primary"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            alt="Transporte Ferreñafe Uyurpampa - Toyota Hiace 5L"
+            class="w-full h-full object-cover"
+            src="img/fotocombi5L.png"
+          />
+          <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
+        <div
+          class="relative z-10 max-w-7xl mx-auto px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-2 gap-xl"
+        >
+          <div class="flex flex-col gap-md text-white animate-slideInLeft">
+            <span
+              class="inline-flex items-center px-md py-xs rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm w-fit"
+            >
+              Ruta Diaria Directa
+            </span>
+            <h1
+              class="font-display-lg text-display-lg leading-tight lg:text-[56px] text-white"
+            >
+              Transporte Confiable de Encomiendas Ferreñafe - Uyurpampa
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-surface-container max-w-lg"
+            >
+              Llegamos donde otros no llegan. Conectamos la ciudad con el
+              corazón de la sierra lambayecana con seguridad y puntualidad
+              garantizada.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-md mt-lg">
+              <a
+                href="https://wa.me/51980333214?text=Hola,%20quisiera%20cotizar%20un%20envío"
+                target="_blank"
+                class="bg-primary hover:bg-primary-fixed text-on-primary hover:text-on-primary-fixed px-xl py-md rounded-xl font-headline-md text-headline-md shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-sm cta-shimmer"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >send</span
+                >
+                Cotizar Envío
+              </a>
+              <a
+                id="heroWhatsAppBtn"
+                href="https://wa.me/51980333214"
+                target="_blank"
+                class="bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white px-xl py-md rounded-xl font-headline-md text-headline-md transition-all flex items-center justify-center gap-sm"
+              >
+                <span class="material-symbols-outlined">chat</span>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-end justify-end">
+            <div
+              class="glass-card p-lg rounded-2xl border border-white/20 shadow-2xl max-w-sm animate-slideInRight animate-float"
+            >
+              <div class="flex items-center gap-md mb-md">
+                <div
+                  class="bg-primary-container p-sm rounded-lg text-on-primary-container"
+                >
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <div>
+                  <p class="font-label-sm text-on-surface-variant">
+                    Próxima Salida
+                  </p>
+                  <p id="nextDeparture" class="font-headline-md text-primary">Calculando...</p>
+                </div>
+              </div>
+              <div class="space-y-sm">
+                <div class="flex justify-between items-center text-label-md">
+                  <span class="text-on-surface-variant">Ferreñafe</span>
+                  <span class="material-symbols-outlined text-primary"
+                    >arrow_forward</span
+                  >
+                  <span class="text-on-surface-variant">Uyurpampa</span>
+                </div>
+                <div class="pt-md border-t border-outline-variant mt-md">
+                  <div class="flex justify-between items-center mb-xs">
+                    <span class="font-label-sm text-on-surface-variant"
+                      >Tarifa Ida</span
+                    >
+                    <span class="font-headline-md text-secondary"
+                      >S/ 25.00</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="font-label-sm text-on-surface-variant"
+                      >Tarifa Bajada</span
+                    >
+                    <span class="font-headline-md text-secondary"
+                      >S/ 20.00</span
+                    >
+                  </div>
+                  <div class="mt-md flex items-center gap-sm text-primary">
+                    <span class="material-symbols-outlined text-[20px]"
+                      >history</span
+                    >
+                    <span class="font-label-md"
+                      >Salidas: 1:30 AM - 2:00 AM / 1:30 PM - 2:30 PM</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stats/USP Section -->
+      <section class="py-xl bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-margin-desktop">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-lg text-center">
+            <div class="flex flex-col gap-xs stat-item fade-in-scroll">
+              <p class="font-display-lg text-display-lg text-primary">100%</p>
+              <p class="font-label-md text-on-surface-variant">
+                Entregas Seguras
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-xs stat-item fade-in-scroll delay-100"
+            >
+              <p class="font-display-lg text-display-lg text-primary">+5k</p>
+              <p class="font-label-md text-on-surface-variant">
+                Paquetes Enviados
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-xs stat-item fade-in-scroll delay-200"
+            >
+              <p class="font-display-lg text-display-lg text-primary">Daily</p>
+              <p class="font-label-md text-on-surface-variant">
+                Rutas Frecuentes
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-xs stat-item fade-in-scroll delay-300"
+            >
+              <p class="font-display-lg text-display-lg text-primary">Exp</p>
+              <p class="font-label-md text-on-surface-variant">
+                Expertos Locales
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Bento Grid -->
+      <section class="py-xl bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-margin-desktop">
+          <div class="text-center mb-xl">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-md">
+              Nuestra Flota
+            </h2>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
+            >
+              Contamos con vehículos modernos y equipados para garantizar la
+              seguridad de su carga en todo momento.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            <div
+              class="group overflow-hidden rounded-2xl bg-surface-container-lowest border border-outline-variant hover-lift fade-in-scroll"
+            >
+              <div class="aspect-video overflow-hidden">
+                <img
+                  alt="Toyota Hiace 5L"
+                  class="w-full h-full object-cover fleet-image"
+                  src="img/foto2detoyota5L.png"
+                />
+              </div>
+              <div class="p-lg">
+                <h3 class="font-headline-md text-on-surface">
+                  Toyota Hiace 5L
+                </h3>
+                <p class="font-body-md text-on-surface-variant">
+                  Ideal para encomiendas rápidas y transporte de pasajeros con
+                  máxima comodidad.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group overflow-hidden rounded-2xl bg-surface-container-lowest border border-outline-variant hover-lift fade-in-scroll delay-200"
+            >
+              <div class="aspect-video overflow-hidden">
+                <img
+                  alt="Toyota Hilux 4x4"
+                  class="w-full h-full object-cover fleet-image"
+                  src="img/camioneta.png"
+                />
+              </div>
+              <div class="p-lg">
+                <h3 class="font-headline-md text-on-surface">
+                  Toyota Hilux 4x4
+                </h3>
+                <p class="font-body-md text-on-surface-variant">
+                  Potencia pura para llegar a las zonas más difíciles de la
+                  sierra lambayecana.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-background">
+        <div class="max-w-7xl mx-auto px-margin-desktop">
+          <div class="text-center mb-xl">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-md">
+              Nuestros Servicios
+            </h2>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
+            >
+              Soluciones logísticas diseñadas para cada necesidad, desde sobres
+              urgentes hasta carga pesada.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+            <!-- Service 1 -->
+            <div
+              class="bg-surface-container-lowest p-lg rounded-2xl border border-outline-variant service-card fade-in-scroll"
+            >
+              <div
+                class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-xl flex items-center justify-center mb-md service-icon"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >mail</span
+                >
+              </div>
+              <h3
+                class="font-headline-md text-headline-md mb-sm text-on-surface"
+              >
+                Sobres y Documentos
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Envío urgente de documentación legal, facturas y correspondencia
+                personal con entrega en mano.
+              </p>
+            </div>
+            <!-- Service 2 -->
+            <div
+              class="bg-surface-container-lowest p-lg rounded-2xl border border-outline-variant service-card fade-in-scroll delay-100"
+            >
+              <div
+                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-md service-icon"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >package_2</span
+                >
+              </div>
+              <h3
+                class="font-headline-md text-headline-md mb-sm text-on-surface"
+              >
+                Encomiendas Rápidas
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Paquetes de tamaño medio, cajas y compras personales.
+                Clasificamos su carga con el mayor cuidado.
+              </p>
+            </div>
+            <!-- Service 3 -->
+            <div
+              class="bg-surface-container-lowest p-lg rounded-2xl border border-outline-variant service-card fade-in-scroll delay-200"
+            >
+              <div
+                class="w-12 h-12 bg-secondary text-on-secondary rounded-xl flex items-center justify-center mb-md service-icon"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >local_shipping</span
+                >
+              </div>
+              <h3
+                class="font-headline-md text-headline-md mb-sm text-on-surface"
+              >
+                Carga Pesada
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Transporte de mercadería, herramientas y bultos voluminosos.
+                Contamos con el espacio necesario.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fleet Section -->
+      <section class="py-xl bg-surface-container-highest">
+        <div
+          class="max-w-7xl mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center"
+        >
+          <div
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <!-- Carrusel de Flota -->
+            <div class="relative w-full aspect-video" id="fleetCarousel">
+              <!-- Slides -->
+              <div class="carousel-slide active">
+                <img
+                  alt="Toyota Hiace 5L - Transporte Lucero"
+                  class="w-full h-full object-cover"
+                  src="img/fotocombi5L.png"
+                />
+                <div class="absolute bottom-4 left-4 md:bottom-lg md:left-lg glass-card p-2 md:p-md rounded-lg md:rounded-xl">
+                  <div class="flex items-center gap-2 md:gap-sm">
+                    <span class="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="font-label-md text-xs md:text-sm text-on-surface">Toyota Hiace 5L</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-slide">
+                <img
+                  alt="Toyota Hiace 5L - Vista 2"
+                  class="w-full h-full object-cover"
+                  src="img/foto2detoyota5L.png"
+                />
+                <div class="absolute bottom-4 left-4 md:bottom-lg md:left-lg glass-card p-2 md:p-md rounded-lg md:rounded-xl">
+                  <div class="flex items-center gap-2 md:gap-sm">
+                    <span class="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="font-label-md text-xs md:text-sm text-on-surface">Toyota Hiace 5L</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-slide">
+                <img
+                  alt="Camioneta 4x4 - Transporte Lucero"
+                  class="w-full h-full object-cover"
+                  src="img/camioneta.png"
+                />
+                <div class="absolute bottom-4 left-4 md:bottom-lg md:left-lg glass-card p-2 md:p-md rounded-lg md:rounded-xl">
+                  <div class="flex items-center gap-2 md:gap-sm">
+                    <span class="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="font-label-md text-xs md:text-sm text-on-surface">Camioneta 4x4</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controles de navegación -->
+              <button onclick="prevSlide()" class="carousel-control carousel-prev">
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button onclick="nextSlide()" class="carousel-control carousel-next">
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+
+              <!-- Indicadores -->
+              <div class="carousel-indicators">
+                <button onclick="goToSlide(0)" class="carousel-indicator active"></button>
+                <button onclick="goToSlide(1)" class="carousel-indicator"></button>
+                <button onclick="goToSlide(2)" class="carousel-indicator"></button>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 flex flex-col gap-md">
+            <h2 class="font-headline-lg text-headline-lg text-primary">
+              Potencia y Fiabilidad: Nuestra Flota Versátil
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              Utilizamos vehículos <strong>Toyota Hiace 5L</strong> y
+              <strong>camionetas 4x4</strong>, reconocidos por su resistencia y
+              adaptabilidad a la geografía de nuestra región, garantizando el
+              acceso a las zonas más difíciles.
+            </p>
+            <ul class="space-y-md mt-sm">
+              <li class="flex items-start gap-md">
+                <div
+                  class="mt-1 flex-shrink-0 w-6 h-6 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >check</span
+                  >
+                </div>
+                <div>
+                  <p class="font-headline-md text-[18px] text-on-surface">
+                    Mantenimiento Riguroso
+                  </p>
+                  <p class="font-body-md text-on-surface-variant">
+                    Revisiones semanales para garantizar que su carga llegue sin
+                    contratiempos.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-md">
+                <div
+                  class="mt-1 flex-shrink-0 w-6 h-6 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >check</span
+                  >
+                </div>
+                <div>
+                  <p class="font-headline-md text-[18px] text-on-surface">
+                    Capacidad Optimizada
+                  </p>
+                  <p class="font-body-md text-on-surface-variant">
+                    Espacio versátil para sobres pequeños o bultos industriales
+                    pesados.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Why Choose Us -->
+      <section class="py-xl bg-background">
+        <div class="max-w-7xl mx-auto px-margin-desktop">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+            <div
+              class="p-lg flex flex-col items-center text-center gap-sm border-r border-outline-variant last:border-0"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-display-lg"
+                >alarm</span
+              >
+              <h4 class="font-headline-md text-headline-md text-on-surface">
+                Puntualidad
+              </h4>
+              <p class="font-body-md text-on-surface-variant">
+                Respetamos los horarios de salida y entrega estrictamente.
+              </p>
+            </div>
+            <div
+              class="p-lg flex flex-col items-center text-center gap-sm border-r border-outline-variant last:border-0"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-display-lg"
+                >verified_user</span
+              >
+              <h4 class="font-headline-md text-headline-md text-on-surface">
+                Seguridad
+              </h4>
+              <p class="font-body-md text-on-surface-variant">
+                Protocolos de manejo de carga para evitar daños o pérdidas.
+              </p>
+            </div>
+            <div
+              class="p-lg flex flex-col items-center text-center gap-sm border-r border-outline-variant last:border-0"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-display-lg"
+                >location_on</span
+              >
+              <h4 class="font-headline-md text-headline-md text-on-surface">
+                Expertos Locales
+              </h4>
+              <p class="font-body-md text-on-surface-variant">
+                Conocemos cada rincón entre Ferreñafe y Uyurpampa.
+              </p>
+            </div>
+            <div class="p-lg flex flex-col items-center text-center gap-sm">
+              <span
+                class="material-symbols-outlined text-primary text-display-lg"
+                >support_agent</span
+              >
+              <h4 class="font-headline-md text-headline-md text-on-surface">
+                Atención Directa
+              </h4>
+              <p class="font-body-md text-on-surface-variant">
+                Comunicación constante vía WhatsApp con nuestros conductores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-xl">
+        <div class="max-w-7xl mx-auto px-margin-desktop">
+          <div
+            class="bg-primary rounded-2xl p-xl flex flex-col lg:flex-row items-center justify-between gap-xl relative overflow-hidden"
+          >
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2"
+              ></div>
+            </div>
+            <div
+              class="relative z-10 text-on-primary flex flex-col gap-md text-center lg:text-left"
+            >
+              <h2 class="font-headline-lg text-headline-lg lg:text-[40px]">
+                ¿Listo para enviar tu encomienda?
+              </h2>
+              <p
+                class="font-body-lg text-body-lg text-on-primary-container max-w-xl"
+              >
+                Contáctanos ahora mismo y obtén una cotización inmediata según
+                el tamaño y peso de tu envío.
+              </p>
+              <div class="flex flex-wrap gap-md mt-sm">
+                <a
+                  href="tel:+51980333214"
+                  class="inline-flex items-center gap-sm text-on-primary hover:text-on-primary-container transition-colors"
+                >
+                  <span class="material-symbols-outlined">call</span>
+                  <span class="font-label-md">980 333 214 (Tarde)</span>
+                </a>
+                <a
+                  href="tel:+51950863131"
+                  class="inline-flex items-center gap-sm text-on-primary hover:text-on-primary-container transition-colors"
+                >
+                  <span class="material-symbols-outlined">call</span>
+                  <span class="font-label-md">950 863 131 (Madrugada)</span>
+                </a>
+              </div>
+            </div>
+            <div class="relative z-10 flex flex-col sm:flex-row gap-md">
+              <a
+                class="bg-surface text-primary px-xl py-md rounded-xl font-headline-md text-headline-md hover:bg-surface-variant transition-all flex items-center gap-sm justify-center"
+                href="tel:+51980333214"
+              >
+                <span class="material-symbols-outlined">call</span>
+                Llamar Ahora
+              </a>
+              <a
+                class="bg-primary-container text-on-primary-container hover:bg-primary-fixed px-xl py-md rounded-xl font-headline-md text-headline-md transition-all flex items-center gap-sm justify-center"
+                href="https://wa.me/51980333214"
+                target="_blank"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >chat</span
+                >
+                Enviar WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <!-- Modal de Selección de Contacto -->
+    <div
+      id="contactModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+    >
+      <div
+        class="bg-surface rounded-2xl p-xl max-w-md w-full shadow-2xl animate-scaleIn"
+      >
+        <div class="flex justify-between items-center mb-lg">
+          <h3 class="font-headline-md text-headline-md text-primary">
+            Selecciona un número
+          </h3>
+          <button
+            onclick="closeContactModal()"
+            class="text-on-surface-variant hover:text-on-surface transition-colors"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="space-y-sm">
+          <a
+            href="tel:+51980333214"
+            class="flex items-center gap-md p-md rounded-xl bg-surface-container hover:bg-primary-container transition-all group"
+          >
+            <div
+              class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div class="flex-1">
+              <p class="font-headline-md text-on-surface">Salidas de Tarde</p>
+              <p class="font-body-md text-on-surface-variant">980 333 214</p>
+            </div>
+          </a>
+          <a
+            href="tel:+51950863131"
+            class="flex items-center gap-md p-md rounded-xl bg-surface-container hover:bg-primary-container transition-all group"
+          >
+            <div
+              class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div class="flex-1">
+              <p class="font-headline-md text-on-surface">Salidas de Madrugada</p>
+              <p class="font-body-md text-on-surface-variant">950 863 131</p>
+            </div>
+          </a>
+        </div>
+        <div class="mt-lg pt-lg border-t border-outline-variant">
+          <p class="font-label-sm text-on-surface-variant text-center mb-md">
+            O escríbenos por WhatsApp
+          </p>
+          <div class="flex gap-sm">
+            <a
+              href="https://wa.me/51980333214?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios"
+              target="_blank"
+              class="flex-1 bg-[#25D366] text-white px-md py-sm rounded-lg font-label-md text-label-md hover:bg-[#20BA5A] transition-all flex items-center justify-center gap-sm"
+            >
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              Tarde (214)
+            </a>
+            <a
+              href="https://wa.me/51950863131?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios"
+              target="_blank"
+              class="flex-1 bg-[#25D366] text-white px-md py-sm rounded-lg font-label-md text-label-md hover:bg-[#20BA5A] transition-all flex items-center justify-center gap-sm"
+            >
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              Madrugada (131)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-xl bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-margin-desktop">
+        <div class="text-center mb-xl">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-md">
+            Nuestra Ubicación
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">
+            Visítanos en nuestra oficina principal en Ferreñafe para gestionar
+            tus envíos personalmente.
+          </p>
+          <a 
+            href="https://maps.app.goo.gl/H7o6w1ZRQybjH1zM7" 
+            target="_blank"
+            class="inline-flex items-center gap-sm mt-md px-lg py-sm bg-primary text-on-primary rounded-lg font-label-md hover:bg-primary-container transition-all"
+          >
+            <span class="material-symbols-outlined">directions</span>
+            Abrir en Google Maps
+          </a>
+        </div>
+        <div
+          class="rounded-2xl overflow-hidden shadow-lg border border-outline-variant h-[450px] bg-surface-container-highest map-container fade-in-scroll"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d750.8720994541658!2d-79.7900049577615!3d-6.631291942161856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904c95000bd707a5%3A0x77428082a15f9dff!2sTerminal%20terrestre%20lucero!5e0!3m2!1sen!2spe!4v1780787114779!5m2!1sen!2spe"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="w-full mt-xl bg-inverse-surface dark:bg-surface-container-lowest font-label-md text-label-md text-on-primary-fixed dark:text-primary border-t border-outline-variant"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center py-lg px-margin-desktop max-w-7xl mx-auto"
+      >
+        <div class="mb-md md:mb-0">
+          <p
+            class="font-headline-md text-headline-md font-bold text-inverse-primary dark:text-primary"
+          >
+            Transporte Lucero
+          </p>
+          <p class="text-surface-variant dark:text-on-surface-variant mt-xs">
+            © 2024 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos
+            reservados.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-lg">
+          <a
+            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer"
+            href="#"
+            >Privacidad</a
+          >
+          <a
+            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer"
+            href="#"
+            >Términos de Servicio</a
+          >
+          <a
+            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer"
+            href="#"
+            >Preguntas Frecuentes</a
+          >
+          <a
+            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer font-bold"
+            href="#"
+            >Libro de Reclamaciones</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

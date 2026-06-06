@@ -1,0 +1,21 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/ 
+*.swp
+*.swo
+*~
+
+# Temporales
+*.log
+*.tmp
+*.bak
+
+# Node modules (si se usa en el futuro)
+node_modules/
+# Archivo de desarrollo (no subir)
+lucero.html
