@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Preguntas Frecuentes | Transporte Lucero</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4a7c59",
+              "primary-container": "#78a886",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#d8f0de",
+              "on-surface": "#2e3230",
+              "on-surface-variant": "#4a4e4a",
+              "surface": "#faf6f0",
+              "surface-container-low": "#f5f1ea",
+              "surface-container": "#f0ece4",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e4e0d8",
+              "outline": "#74796e",
+              "outline-variant": "#c4c8bc",
+              "background": "#faf6f0",
+              "on-background": "#2e3230",
+              "inverse-surface": "#2e3230",
+              "inverse-primary": "#8ecf9e",
+              "on-inverse-surface": "#f5f0e8",
+            },
+            fontFamily: {
+              "headline-lg": ["Literata", "serif"],
+              "body-md": ["Nunito Sans", "sans-serif"],
+              "label-sm": ["Nunito Sans", "sans-serif"],
+              "label-md": ["Nunito Sans", "sans-serif"],
+              "headline-md": ["Literata", "serif"],
+              "body-lg": ["Nunito Sans", "sans-serif"],
+              "display-lg": ["Literata", "serif"],
+            },
+            spacing: {
+              "margin-mobile": "16px",
+              "margin-desktop": "64px",
+              lg: "24px",
+              md: "16px",
+              sm: "8px",
+              xs: "4px",
+              xl: "48px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+      .faq-answer.open {
+        max-height: 500px;
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      .faq-icon.rotated {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background font-body-md">
+    <!-- Header -->
+    <header class="w-full top-0 sticky bg-surface shadow-sm border-b border-outline-variant z-50">
+      <div class="flex justify-between items-center h-16 px-margin-desktop max-w-[2000px] mx-auto">
+        <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary cursor-pointer active:opacity-80">
+          Transporte Lucero
+        </a>
+        <nav class="hidden md:flex items-center gap-xl">
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Inicio</a>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#servicios">Servicios</a>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#rutas">Rutas</a>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#nosotros">Nosotros</a>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#contacto">Contacto</a>
+        </nav>
+        <a href="index.html#contacto" class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95">
+          Cotizar Envío
+        </a>
+      </div>
+    </header>
+
+    <main class="py-xl xl:py-2xl">
+      <div class="max-w-4xl mx-auto px-margin-desktop">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-sm text-on-surface-variant mb-xl">
+          <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+          <span class="text-on-surface font-semibold">Preguntas Frecuentes</span>
+        </div>
+
+        <h1 class="font-headline-lg text-headline-lg text-primary mb-md">Preguntas Frecuentes</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Resolvemos tus dudas sobre nuestros servicios de transporte y encomiendas.</p>
+
+        <!-- FAQ Accordion -->
+        <div class="space-y-md">
+
+          <!-- FAQ 1 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Cuáles son las rutas disponibles?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">Nuestra ruta principal conecta <strong>Ferreñafe (Terminal Principal)</strong> con <strong>Uyurpampa</strong>. El trayecto tiene una distancia de 97.1 km y dura aproximadamente 3 a 3.5 horas. Pasamos por Pitipo/Tres Marías y Moyán.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Cuáles son los horarios de salida?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">Tenemos <strong>2 salidas diarias</strong>:<br><br><strong>Madrugada:</strong> Sale a las 2:00 AM (preséntate a las 1:30 AM)<br><strong>Tarde:</strong> Sale a las 2:30 PM (preséntate a las 1:30 PM)<br><br>Operamos de lunes a domingo.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Cuánto cuesta el viaje?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg"><strong>Ferreñafe → Uyurpampa:</strong> S/ 25.00<br><strong>Uyurpampa → Ferreñafe:</strong> S/ 20.00<br><br>El precio varía según la dirección debido a las condiciones del terreno.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Cuánto equipaje puedo llevar?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">Cada pasajero puede llevar:<br><br><strong>Equipaje de mano:</strong> Hasta 10 kg (sin costo adicional)<br><strong>Maleta o bulto:</strong> Hasta 25 kg (sin costo adicional)<br><strong>Equipaje adicional:</strong> Sujeto a disponibilidad y cargo extra<br><br>Consulte sobre artículos prohibidos en nuestros <a href="terminos.html" class="text-primary hover:underline">Términos de Servicio</a>.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Qué puedo enviar como encomienda?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">Aceptamos:<br><br><strong>Sobres y documentos:</strong> Facturas, cartas, correspondencia personal<br><strong>Paquetes:</strong> Cajas, compras personales, ropa, alimentos no perecibles<br><strong>Carga:</strong> Herramientas, mercadería, bultos voluminosos<br><br>No aceptamos: explosivos, inflamables, animales vivos, ni productos perecibles sin embalaje adecuado.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Cuánto tarda en llegar una encomienda?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">El tiempo estimado de entrega es de <strong>3 a 4 horas hábiles</strong> después del despacho. En casos excepcionales (condiciones climáticas, feriados), el tiempo puede extenderse. Puede comunicarse con nosotros para dar seguimiento a su envío.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Aceptan tarjeta de crédito o débito?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">Por el momento aceptamos <strong>solo efectivo en soles peruanos</strong>. También aceptamos transferencias bancarias para encomiendas grandes, previa coordinación con atención al cliente.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Puedo cancelar o reprogramar mi viaje?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg"><strong>Cancelaciones:</strong><br><br>• Más de 2 horas antes: reembolso del 100%<br>• Entre 1 y 2 horas antes: reembolso del 50%<br>• Menos de 1 hora: no hay reembolso<br><br><strong>Reprogramación:</strong> Puede reprogramar sin costo adicional comunicándose al menos 1 hora antes de la salida.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden faq-item">
+            <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-low transition-colors">
+              <span class="font-headline-md text-headline-md text-on-surface">¿Cómo puedo hacer seguimiento de mi encomienda?</span>
+              <span class="material-symbols-outlined text-primary faq-icon">expand_more</span>
+            </button>
+            <div class="faq-answer px-lg">
+              <p class="font-body-md text-on-surface-variant pb-lg">Puede comunicarse con nosotros por <strong>WhatsApp</strong> o <strong>llamada telefónica</strong> indicando:<br><br>• Nombre del remitente y destinatario<br>• Descripción del paquete<br>• Fecha de envío<br><br>Le informaremos el estado actual de su encomienda.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-xl bg-primary-container/30 rounded-2xl p-xl text-center">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-md">¿No encontraste tu respuesta?</h3>
+          <p class="font-body-md text-on-surface-variant mb-lg">Contáctanos directamente y te ayudaremos con gusto.</p>
+          <div class="flex flex-col sm:flex-row gap-md justify-center">
+            <a href="tel:+51980333214" class="bg-primary text-on-primary px-xl py-md rounded-xl font-headline-md text-headline-md hover:bg-primary-container transition-all flex items-center justify-center gap-sm">
+              <span class="material-symbols-outlined">call</span>
+              Llamar Ahora
+            </a>
+            <a href="https://wa.me/51980333214" target="_blank" class="bg-[#25D366] text-white px-xl py-md rounded-xl font-headline-md text-headline-md hover:opacity-90 transition-all flex items-center justify-center gap-sm">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">chat</span>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full mt-xl bg-inverse-surface font-label-md text-label-md text-on-inverse-surface border-t border-outline-variant">
+      <div class="max-w-[2000px] mx-auto px-margin-desktop py-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mb-xl">
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary mb-md">Transporte Lucero</p>
+            <p class="text-surface-variant mb-md">Conectamos Ferreñafe con Uyurpampa. Transporte seguro de pasajeros y encomiendas con más de 10 años de experiencia.</p>
+          </div>
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary mb-md">Servicios</p>
+            <ul class="space-y-sm">
+              <li><a href="index.html#servicios" class="text-surface-variant hover:text-inverse-primary transition-colors">Transporte de Pasajeros</a></li>
+              <li><a href="index.html#servicios" class="text-surface-variant hover:text-inverse-primary transition-colors">Envío de Encomiendas</a></li>
+              <li><a href="index.html#servicios" class="text-surface-variant hover:text-inverse-primary transition-colors">Carga Pesada</a></li>
+              <li><a href="index.html#rutas" class="text-surface-variant hover:text-inverse-primary transition-colors">Nuestras Rutas</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary mb-md">Contacto</p>
+            <ul class="space-y-sm">
+              <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-[18px]">call</span><span class="text-surface-variant">980 333 214 (Tarde)</span></li>
+              <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-[18px]">call</span><span class="text-surface-variant">950 863 131 (Madrugada)</span></li>
+              <li class="flex items-start gap-sm"><span class="material-symbols-outlined text-[18px]">location_on</span><span class="text-surface-variant">Terminal Terrestre Lucero, Ferreñafe</span></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary mb-md">Horarios</p>
+            <ul class="space-y-sm">
+              <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-[18px]">schedule</span><span class="text-surface-variant">Madrugada: 1:30 AM - 3:00 AM</span></li>
+              <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-[18px]">schedule</span><span class="text-surface-variant">Tarde: 1:30 PM - 3:30 PM</span></li>
+              <li class="flex items-center gap-sm"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="text-surface-variant">Lunes a Domingo</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-lg flex flex-col md:flex-row justify-between items-center gap-md">
+          <p class="text-surface-variant">© 2026 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos reservados.</p>
+          <div class="flex flex-wrap justify-center gap-lg">
+            <a class="text-surface-variant hover:text-inverse-primary transition-colors" href="privacidad.html">Privacidad</a>
+            <a class="text-surface-variant hover:text-inverse-primary transition-colors" href="terminos.html">Términos de Servicio</a>
+            <a class="text-surface-variant hover:text-inverse-primary transition-colors" href="faq.html">Preguntas Frecuentes</a>
+            <a class="text-surface-variant hover:text-inverse-primary transition-colors font-bold" href="libro-reclamaciones.html">Libro de Reclamaciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(button) {
+        const item = button.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        
+        // Cerrar otros abiertos
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.querySelector('.faq-answer').classList.remove('open');
+            other.querySelector('.faq-icon').classList.remove('rotated');
+          }
+        });
+        
+        answer.classList.toggle('open');
+        icon.classList.toggle('rotated');
+      }
+    </script>
+
+    <!-- Cookie Consent Banner - Minimalista -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 hidden p-4">
+      <div class="bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant mx-auto max-w-4xl flex items-center justify-between gap-4 px-lg py-md">
+        <p class="font-body-md text-on-surface-variant text-sm">Utilizamos cookies para mejorar tu experiencia. <a href="privacidad.html" class="text-primary hover:underline">Política de Privacidad</a></p>
+        <div class="flex items-center gap-sm flex-shrink-0">
+          <button onclick="openSettings()" class="px-md py-xs rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-low transition-all text-sm">Configurar</button>
+          <button onclick="acceptAll()" class="px-md py-xs rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-all text-sm">Aceptar</button>
+          <button onclick="closeBanner()" class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-[20px]">close</span></button>
+        </div>
+      </div>
+    </div>
+    <!-- Cookie Settings Modal -->
+    <div id="cookieSettings" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+      <div class="bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant max-w-md w-full p-xl">
+        <div class="flex items-center justify-between mb-lg">
+          <h3 class="font-headline-md text-headline-md text-on-surface">Configuración de Cookies</h3>
+          <button onclick="closeSettings()" class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <div class="space-y-md mb-lg">
+          <div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl"><div><p class="font-label-md text-on-surface font-semibold">Necesarias</p><p class="font-body-md text-on-surface-variant text-sm">Funcionamiento básico</p></div><div class="w-10 h-6 bg-primary rounded-full flex items-center justify-end px-1"><div class="w-4 h-4 bg-white rounded-full"></div></div></div>
+          <div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl"><div><p class="font-label-md text-on-surface font-semibold">Analíticas</p><p class="font-body-md text-on-surface-variant text-sm">Entender uso del sitio</p></div><input type="checkbox" id="analyticsCheck" class="w-5 h-5 accent-primary cursor-pointer"></div>
+          <div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl"><div><p class="font-label-md text-on-surface font-semibold">Marketing</p><p class="font-body-md text-on-surface-variant text-sm">Publicidad y redes</p></div><input type="checkbox" id="marketingCheck" class="w-5 h-5 accent-primary cursor-pointer"></div>
+        </div>
+        <div class="flex gap-sm"><button onclick="rejectAll()" class="flex-1 px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-low transition-all">Rechazar</button><button onclick="savePreferences()" class="flex-1 px-md py-sm rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-all">Guardar</button></div>
+      </div>
+    </div>
+
+    <script src="js/cookies.js"></script>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/51980333214" target="_blank" class="fixed bottom-4 right-4 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all">
+      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </body>
+</html>

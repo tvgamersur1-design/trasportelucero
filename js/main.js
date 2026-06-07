@@ -3,19 +3,16 @@ function calculateNextDeparture() {
     const now = new Date();
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
-    const currentTime = currentHour * 60 + currentMinute; // Convertir a minutos desde medianoche
+    const currentTime = currentHour * 60 + currentMinute;
     
-    // Horarios de salida en minutos desde medianoche
+    // Solo horarios de salida reales
     const departures = [
-        { time: 1 * 60 + 30, label: "1:30 AM", period: "Madrugada", phone: "950863131" },      // 1:30 AM = 90 min
-        { time: 2 * 60 + 0, label: "2:00 AM", period: "Madrugada", phone: "950863131" },       // 2:00 AM = 120 min
-        { time: 13 * 60 + 30, label: "1:30 PM", period: "Tarde", phone: "980333214" },         // 1:30 PM = 810 min
-        { time: 14 * 60 + 30, label: "2:30 PM", period: "Tarde", phone: "980333214" }          // 2:30 PM = 870 min
+        { time: 2 * 60 + 0, label: "2:00 AM", period: "Madrugada", phone: "950863131" },
+        { time: 14 * 60 + 30, label: "2:30 PM", period: "Tarde", phone: "980333214" }
     ];
     
     let nextDeparture = null;
     
-    // Buscar la próxima salida del día
     for (let departure of departures) {
         if (currentTime < departure.time) {
             nextDeparture = departure;
@@ -23,7 +20,6 @@ function calculateNextDeparture() {
         }
     }
     
-    // Si no hay más salidas hoy, la próxima es la primera de mañana
     if (!nextDeparture) {
         nextDeparture = departures[0];
         return {

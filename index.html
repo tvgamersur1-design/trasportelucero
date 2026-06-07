@@ -152,8 +152,13 @@
         </div>
         <nav class="hidden md:flex items-center gap-xl">
           <a
-            class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200"
+            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
             href="#"
+            >Inicio</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
+            href="#servicios"
             >Servicios</a
           >
           <a
@@ -163,12 +168,12 @@
           >
           <a
             class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#"
+            href="#nosotros"
             >Nosotros</a
           >
           <a
             class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#"
+            href="#contacto"
             >Contacto</a
           >
         </nav>
@@ -265,7 +270,7 @@
                 <div class="pt-md border-t border-outline-variant mt-md">
                   <div class="flex justify-between items-center mb-xs">
                     <span class="font-label-sm text-on-surface-variant"
-                      >Tarifa Ida</span
+                      >Ferreñafe → Uyurpampa</span
                     >
                     <span class="font-headline-md text-secondary"
                       >S/ 25.00</span
@@ -273,19 +278,21 @@
                   </div>
                   <div class="flex justify-between items-center">
                     <span class="font-label-sm text-on-surface-variant"
-                      >Tarifa Bajada</span
+                      >Uyurpampa → Ferreñafe</span
                     >
                     <span class="font-headline-md text-secondary"
                       >S/ 20.00</span
                     >
                   </div>
-                  <div class="mt-md flex items-center gap-sm text-primary">
-                    <span class="material-symbols-outlined text-[20px]"
-                      >history</span
-                    >
-                    <span class="font-label-md"
-                      >Salidas: 1:30 AM - 2:00 AM / 1:30 PM - 2:30 PM</span
-                    >
+                  <div class="mt-md space-y-xs">
+                    <div class="flex items-center gap-sm text-primary">
+                      <span class="material-symbols-outlined text-[20px]">schedule</span>
+                      <span class="font-label-md font-semibold">Salidas: 2:00 AM / 2:30 PM</span>
+                    </div>
+                    <div class="flex items-center gap-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[18px]">info</span>
+                      <span class="font-label-sm">Preséntate 30 min antes en terminal</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -315,16 +322,22 @@
               </div>
               <div class="pt-md border-t border-outline-variant mt-md">
                 <div class="flex justify-between items-center mb-xs">
-                  <span class="font-label-sm text-on-surface-variant">Tarifa Ida</span>
+                  <span class="font-label-sm text-on-surface-variant">Ferreñafe → Uyurpampa</span>
                   <span class="font-headline-md text-secondary">S/ 25.00</span>
                 </div>
                 <div class="flex justify-between items-center">
-                  <span class="font-label-sm text-on-surface-variant">Tarifa Bajada</span>
+                  <span class="font-label-sm text-on-surface-variant">Uyurpampa → Ferreñafe</span>
                   <span class="font-headline-md text-secondary">S/ 20.00</span>
                 </div>
-                <div class="mt-md flex items-center gap-sm text-primary">
-                  <span class="material-symbols-outlined text-[20px]">history</span>
-                  <span class="font-label-sm">Salidas: 1:30 AM - 2:00 AM / 1:30 PM - 2:30 PM</span>
+                <div class="mt-md space-y-xs">
+                  <div class="flex items-center gap-sm text-primary">
+                    <span class="material-symbols-outlined text-[20px]">schedule</span>
+                    <span class="font-label-sm font-semibold">Salidas: 2:00 AM / 2:30 PM</span>
+                  </div>
+                  <div class="flex items-center gap-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px]">info</span>
+                    <span class="font-label-sm">Preséntate 30 min antes en terminal</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -540,7 +553,7 @@
           </div>
         </div>
       </section>
-      <section class="py-xl xl:py-2xl bg-background">
+      <section id="servicios" class="py-xl xl:py-2xl bg-background">
         <div class="max-w-[2000px] mx-auto px-margin-desktop">
           <div class="text-center mb-xl">
             <h2 class="font-headline-lg text-headline-lg text-primary mb-md">
@@ -628,7 +641,7 @@
           class="max-w-[2000px] mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center"
         >
           <div
-            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl"
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl fade-in-scroll"
           >
             <!-- Carrusel de Flota -->
             <div class="relative w-full aspect-video" id="fleetCarousel">
@@ -691,7 +704,7 @@
               </div>
             </div>
           </div>
-          <div class="order-1 lg:order-2 flex flex-col gap-md">
+          <div class="order-1 lg:order-2 flex flex-col gap-md fade-in-scroll delay-200">
             <h2 class="font-headline-lg text-headline-lg text-primary">
               Potencia y Fiabilidad: Nuestra Flota Versátil
             </h2>
@@ -743,11 +756,11 @@
         </div>
       </section>
       <!-- Why Choose Us -->
-      <section class="py-xl xl:py-2xl bg-background">
+      <section id="nosotros" class="py-xl xl:py-2xl bg-background">
         <div class="max-w-[2000px] mx-auto px-margin-desktop">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg xl:gap-xl">
             <div
-              class="p-lg xl:p-xl flex flex-col items-center text-center gap-md border-r border-outline-variant last:border-0"
+              class="p-lg xl:p-xl flex flex-col items-center text-center gap-md border-r border-outline-variant last:border-0 fade-in-scroll"
             >
               <span
                 class="material-symbols-outlined text-primary text-display-lg xl:text-[56px]"
@@ -761,7 +774,7 @@
               </p>
             </div>
             <div
-              class="p-lg xl:p-xl flex flex-col items-center text-center gap-md border-r border-outline-variant last:border-0"
+              class="p-lg xl:p-xl flex flex-col items-center text-center gap-md border-r border-outline-variant last:border-0 fade-in-scroll delay-100"
             >
               <span
                 class="material-symbols-outlined text-primary text-display-lg xl:text-[56px]"
@@ -775,7 +788,7 @@
               </p>
             </div>
             <div
-              class="p-lg xl:p-xl flex flex-col items-center text-center gap-md border-r border-outline-variant last:border-0"
+              class="p-lg xl:p-xl flex flex-col items-center text-center gap-md border-r border-outline-variant last:border-0 fade-in-scroll delay-200"
             >
               <span
                 class="material-symbols-outlined text-primary text-display-lg xl:text-[56px]"
@@ -788,7 +801,7 @@
                 Conocemos cada rincón entre Ferreñafe y Uyurpampa.
               </p>
             </div>
-            <div class="p-lg xl:p-xl flex flex-col items-center text-center gap-md">
+            <div class="p-lg xl:p-xl flex flex-col items-center text-center gap-md fade-in-scroll delay-300">
               <span
                 class="material-symbols-outlined text-primary text-display-lg xl:text-[56px]"
                 >support_agent</span
@@ -804,10 +817,10 @@
         </div>
       </section>
       <!-- CTA Section -->
-      <section class="py-xl xl:py-2xl">
+      <section id="contacto" class="py-xl xl:py-2xl">
         <div class="max-w-[2000px] mx-auto px-margin-desktop">
           <div
-            class="bg-primary rounded-2xl p-xl xl:p-2xl flex flex-col lg:flex-row items-center justify-between gap-xl relative overflow-hidden"
+            class="bg-primary rounded-2xl p-xl xl:p-2xl flex flex-col lg:flex-row items-center justify-between gap-xl relative overflow-hidden fade-in-scroll"
           >
             <div class="absolute inset-0 opacity-10 pointer-events-none">
               <div
@@ -979,46 +992,178 @@
       </div>
     </section>
     <footer
-      class="w-full mt-xl bg-inverse-surface dark:bg-surface-container-lowest font-label-md text-label-md text-on-primary-fixed dark:text-primary border-t border-outline-variant"
+      class="w-full mt-xl bg-inverse-surface dark:bg-surface-container-lowest font-label-md text-label-md text-on-primary-fixed dark:text-primary border-t border-outline-variant fade-in-scroll"
     >
-      <div
-        class="flex flex-col md:flex-row justify-between items-center py-lg px-margin-desktop max-w-[2000px] mx-auto"
-      >
-        <div class="mb-md md:mb-0">
-          <p
-            class="font-headline-md text-headline-md font-bold text-inverse-primary dark:text-primary"
-          >
-            Transporte Lucero
-          </p>
-          <p class="text-surface-variant dark:text-on-surface-variant mt-xs">
-            © 2026 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos
-            reservados.
-          </p>
+      <div class="max-w-[2000px] mx-auto px-margin-desktop py-xl">
+        <!-- Grid principal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mb-xl">
+          <!-- Columna 1: Empresa -->
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary dark:text-primary mb-md">
+              Transporte Lucero
+            </p>
+            <p class="text-surface-variant dark:text-on-surface-variant mb-md">
+              Conectamos Ferreñafe con Uyurpampa. Transporte seguro de pasajeros y encomiendas con más de 10 años de experiencia.
+            </p>
+            <!-- Redes sociales -->
+            <div class="flex gap-md">
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-surface-variant hover:bg-primary hover:text-on-primary transition-all" target="_blank">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-surface-variant hover:bg-primary hover:text-on-primary transition-all" target="_blank">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+              </a>
+              <a href="https://wa.me/51980333214" class="w-10 h-10 bg-[#25D366] rounded-lg flex items-center justify-center text-white hover:opacity-80 transition-all" target="_blank">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Servicios -->
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary dark:text-primary mb-md">
+              Servicios
+            </p>
+            <ul class="space-y-sm">
+              <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Transporte de Pasajeros</a></li>
+              <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Envío de Encomiendas</a></li>
+              <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Carga Pesada</a></li>
+              <li><a href="#rutas" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Nuestras Rutas</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Contacto -->
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary dark:text-primary mb-md">
+              Contacto
+            </p>
+            <ul class="space-y-sm">
+              <li class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="text-surface-variant dark:text-on-surface-variant">980 333 214 (Tarde)</span>
+              </li>
+              <li class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="text-surface-variant dark:text-on-surface-variant">950 863 131 (Madrugada)</span>
+              </li>
+              <li class="flex items-start gap-sm">
+                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                <span class="text-surface-variant dark:text-on-surface-variant">Terminal Terrestre Lucero, Ferreñafe</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 4: Horarios -->
+          <div>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary dark:text-primary mb-md">
+              Horarios
+            </p>
+            <ul class="space-y-sm">
+              <li class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                <span class="text-surface-variant dark:text-on-surface-variant">Madrugada: 1:30 AM - 3:00 AM</span>
+              </li>
+              <li class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                <span class="text-surface-variant dark:text-on-surface-variant">Tarde: 1:30 PM - 3:30 PM</span>
+              </li>
+              <li class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                <span class="text-surface-variant dark:text-on-surface-variant">Lunes a Domingo</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-lg">
-          <a
-            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer"
-            href="#"
-            >Privacidad</a
-          >
-          <a
-            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer"
-            href="#"
-            >Términos de Servicio</a
-          >
-          <a
-            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer"
-            href="#"
-            >Preguntas Frecuentes</a
-          >
-          <a
-            class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer font-bold"
-            href="#"
-            >Libro de Reclamaciones</a
-          >
+
+        <!-- Línea divisoria -->
+        <div class="border-t border-white/10 pt-lg flex flex-col md:flex-row justify-between items-center gap-md">
+          <p class="text-surface-variant dark:text-on-surface-variant">
+            © 2026 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos reservados.
+          </p>
+          <div class="flex flex-wrap justify-center gap-lg">
+            <a class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer" href="privacidad.html">Privacidad</a>
+            <a class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer" href="terminos.html">Términos de Servicio</a>
+            <a class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer" href="faq.html">Preguntas Frecuentes</a>
+            <a class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors duration-200 cursor-pointer font-bold" href="libro-reclamaciones.html">Libro de Reclamaciones</a>
+          </div>
         </div>
       </div>
     </footer>
+
+    <!-- Cookie Consent Banner - Minimalista -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 hidden p-4">
+      <div class="bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant mx-auto max-w-4xl flex items-center justify-between gap-4 px-lg py-md">
+        <p class="font-body-md text-on-surface-variant text-sm">
+          Utilizamos cookies para mejorar tu experiencia. 
+          <a href="privacidad.html" class="text-primary hover:underline">Política de Privacidad</a>
+        </p>
+        <div class="flex items-center gap-sm flex-shrink-0">
+          <button onclick="openSettings()" class="px-md py-xs rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-low transition-all text-sm">
+            Configurar
+          </button>
+          <button onclick="acceptAll()" class="px-md py-xs rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-all text-sm">
+            Aceptar
+          </button>
+          <button onclick="closeBanner()" class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookieSettings" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+      <div class="bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant max-w-md w-full p-xl">
+        <div class="flex items-center justify-between mb-lg">
+          <h3 class="font-headline-md text-headline-md text-on-surface">Configuración de Cookies</h3>
+          <button onclick="closeSettings()" class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+
+        <div class="space-y-md mb-lg">
+          <div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl">
+            <div>
+              <p class="font-label-md text-on-surface font-semibold">Necesarias</p>
+              <p class="font-body-md text-on-surface-variant text-sm">Funcionamiento básico</p>
+            </div>
+            <div class="w-10 h-6 bg-primary rounded-full flex items-center justify-end px-1">
+              <div class="w-4 h-4 bg-white rounded-full"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl">
+            <div>
+              <p class="font-label-md text-on-surface font-semibold">Analíticas</p>
+              <p class="font-body-md text-on-surface-variant text-sm">Entender uso del sitio</p>
+            </div>
+            <input type="checkbox" id="analyticsCheck" class="w-5 h-5 accent-primary cursor-pointer">
+          </div>
+          <div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl">
+            <div>
+              <p class="font-label-md text-on-surface font-semibold">Marketing</p>
+              <p class="font-body-md text-on-surface-variant text-sm">Publicidad y redes</p>
+            </div>
+            <input type="checkbox" id="marketingCheck" class="w-5 h-5 accent-primary cursor-pointer">
+          </div>
+        </div>
+
+        <div class="flex gap-sm">
+          <button onclick="rejectAll()" class="flex-1 px-md py-sm rounded-lg border border-outline-variant text-on-surface font-label-md hover:bg-surface-container-low transition-all">
+            Rechazar
+          </button>
+          <button onclick="savePreferences()" class="flex-1 px-md py-sm rounded-lg bg-primary text-on-primary font-label-md hover:bg-primary-container transition-all">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script src="js/cookies.js"></script>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/51980333214" target="_blank" class="fixed bottom-4 right-4 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all">
+      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
   </body>
 </html>
