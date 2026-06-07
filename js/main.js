@@ -44,27 +44,33 @@ function calculateNextDeparture() {
 
 function updateNextDeparture() {
     const departureElement = document.getElementById('nextDeparture');
+    const departureElementMobile = document.getElementById('nextDepartureMobile');
     const whatsappBtn = document.getElementById('heroWhatsAppBtn');
     
+    const nextDep = calculateNextDeparture();
+    
+    // Actualizar versión desktop
     if (departureElement) {
-        const nextDep = calculateNextDeparture();
         departureElement.textContent = nextDep.text;
-        
-        // Actualizar el botón de WhatsApp con el número correcto
-        if (whatsappBtn) {
-            const message = encodeURIComponent('Hola, quisiera información sobre la próxima salida');
-            whatsappBtn.href = `https://wa.me/51${nextDep.phone}?text=${message}`;
-            
-            // Opcional: cambiar el texto del botón
-            const periodLabel = nextDep.period === 'Madrugada' ? '(Madrugada)' : '(Tarde)';
-            // whatsappBtn.querySelector('span:last-child').textContent = `WhatsApp ${periodLabel}`;
-        }
-        
-        // Opcional: agregar clase para animar el cambio
         departureElement.classList.add('updated');
         setTimeout(() => {
             departureElement.classList.remove('updated');
         }, 500);
+    }
+    
+    // Actualizar versión móvil
+    if (departureElementMobile) {
+        departureElementMobile.textContent = nextDep.text;
+        departureElementMobile.classList.add('updated');
+        setTimeout(() => {
+            departureElementMobile.classList.remove('updated');
+        }, 500);
+    }
+    
+    // Actualizar el botón de WhatsApp con el número correcto
+    if (whatsappBtn) {
+        const message = encodeURIComponent('Hola, quisiera información sobre la próxima salida');
+        whatsappBtn.href = `https://wa.me/51${nextDep.phone}?text=${message}`;
     }
 }
 

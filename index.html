@@ -205,14 +205,12 @@
             <h1
               class="font-display-lg text-display-lg leading-tight lg:text-[56px] text-white"
             >
-              Transporte Confiable de Encomiendas Ferreñafe - Uyurpampa
+              Transporte de Pasajeros y Encomiendas Ferreñafe - Uyurpampa
             </h1>
             <p
               class="font-body-lg text-body-lg text-surface-container max-w-lg"
             >
-              Llegamos donde otros no llegan. Conectamos la ciudad con el
-              corazón de la sierra lambayecana con seguridad y puntualidad
-              garantizada.
+              Conectamos la ciudad con el corazón de la sierra lambayecana. Transporte seguro de pasajeros y envío de encomiendas con 10 años de experiencia y puntualidad garantizada.
             </p>
             <div class="flex flex-col sm:flex-row gap-md mt-lg">
               <a
@@ -241,6 +239,7 @@
           <div class="hidden lg:flex items-end justify-end">
             <div
               class="glass-card p-lg rounded-2xl border border-white/20 shadow-2xl max-w-sm animate-slideInRight animate-float"
+              id="departureCardDesktop"
             >
               <div class="flex items-center gap-md mb-md">
                 <div
@@ -294,38 +293,77 @@
           </div>
         </div>
       </section>
+      
+      <!-- Card de Próxima Salida para Móvil -->
+      <section class="lg:hidden py-lg bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-margin-mobile">
+          <div class="bg-surface p-lg rounded-2xl shadow-lg border border-outline-variant animate-fadeIn">
+            <div class="flex items-center gap-md mb-md">
+              <div class="bg-primary-container p-sm rounded-lg text-on-primary-container">
+                <span class="material-symbols-outlined">schedule</span>
+              </div>
+              <div>
+                <p class="font-label-sm text-on-surface-variant">Próxima Salida</p>
+                <p id="nextDepartureMobile" class="font-headline-md text-primary">Calculando...</p>
+              </div>
+            </div>
+            <div class="space-y-sm">
+              <div class="flex justify-between items-center text-label-md">
+                <span class="text-on-surface-variant">Ferreñafe</span>
+                <span class="material-symbols-outlined text-primary">arrow_forward</span>
+                <span class="text-on-surface-variant">Uyurpampa</span>
+              </div>
+              <div class="pt-md border-t border-outline-variant mt-md">
+                <div class="flex justify-between items-center mb-xs">
+                  <span class="font-label-sm text-on-surface-variant">Tarifa Ida</span>
+                  <span class="font-headline-md text-secondary">S/ 25.00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-label-sm text-on-surface-variant">Tarifa Bajada</span>
+                  <span class="font-headline-md text-secondary">S/ 20.00</span>
+                </div>
+                <div class="mt-md flex items-center gap-sm text-primary">
+                  <span class="material-symbols-outlined text-[20px]">history</span>
+                  <span class="font-label-sm">Salidas: 1:30 AM - 2:00 AM / 1:30 PM - 2:30 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <!-- Stats/USP Section -->
       <section class="py-xl bg-surface-container-low">
         <div class="max-w-7xl mx-auto px-margin-desktop">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-lg text-center">
             <div class="flex flex-col gap-xs stat-item fade-in-scroll">
-              <p class="font-display-lg text-display-lg text-primary">100%</p>
+              <p class="font-display-lg text-display-lg text-primary">5,200+</p>
               <p class="font-label-md text-on-surface-variant">
-                Entregas Seguras
+                Envíos Entregados
               </p>
             </div>
             <div
               class="flex flex-col gap-xs stat-item fade-in-scroll delay-100"
             >
-              <p class="font-display-lg text-display-lg text-primary">+5k</p>
+              <p class="font-display-lg text-display-lg text-primary">10</p>
               <p class="font-label-md text-on-surface-variant">
-                Paquetes Enviados
+                Años Operando
               </p>
             </div>
             <div
               class="flex flex-col gap-xs stat-item fade-in-scroll delay-200"
             >
-              <p class="font-display-lg text-display-lg text-primary">Daily</p>
+              <p class="font-display-lg text-display-lg text-primary">98%</p>
               <p class="font-label-md text-on-surface-variant">
-                Rutas Frecuentes
+                Entregas Puntuales
               </p>
             </div>
             <div
               class="flex flex-col gap-xs stat-item fade-in-scroll delay-300"
             >
-              <p class="font-display-lg text-display-lg text-primary">Exp</p>
+              <p class="font-display-lg text-display-lg text-primary">2</p>
               <p class="font-label-md text-on-surface-variant">
-                Expertos Locales
+                Rutas Diarias
               </p>
             </div>
           </div>
@@ -398,8 +436,7 @@
             <p
               class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto"
             >
-              Soluciones logísticas diseñadas para cada necesidad, desde sobres
-              urgentes hasta carga pesada.
+              Soluciones de transporte diseñadas para cada necesidad, desde viajes de pasajeros hasta encomiendas urgentes.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
@@ -408,22 +445,21 @@
               class="bg-surface-container-lowest p-lg rounded-2xl border border-outline-variant service-card fade-in-scroll"
             >
               <div
-                class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-xl flex items-center justify-center mb-md service-icon"
+                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-md service-icon"
               >
                 <span
                   class="material-symbols-outlined"
                   style="font-variation-settings: &quot;FILL&quot; 1"
-                  >mail</span
+                  >airline_seat_recline_normal</span
                 >
               </div>
               <h3
                 class="font-headline-md text-headline-md mb-sm text-on-surface"
               >
-                Sobres y Documentos
+                Transporte de Pasajeros
               </h3>
               <p class="font-body-md text-body-md text-on-surface-variant">
-                Envío urgente de documentación legal, facturas y correspondencia
-                personal con entrega en mano.
+                Viajes cómodos y seguros con salidas diarias. Conectamos Ferreñafe con Uyurpampa con puntualidad y confort garantizado.
               </p>
             </div>
             <!-- Service 2 -->
@@ -431,7 +467,7 @@
               class="bg-surface-container-lowest p-lg rounded-2xl border border-outline-variant service-card fade-in-scroll delay-100"
             >
               <div
-                class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center mb-md service-icon"
+                class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-xl flex items-center justify-center mb-md service-icon"
               >
                 <span
                   class="material-symbols-outlined"
@@ -442,11 +478,10 @@
               <h3
                 class="font-headline-md text-headline-md mb-sm text-on-surface"
               >
-                Encomiendas Rápidas
+                Envío de Encomiendas
               </h3>
               <p class="font-body-md text-body-md text-on-surface-variant">
-                Paquetes de tamaño medio, cajas y compras personales.
-                Clasificamos su carga con el mayor cuidado.
+                Sobres, documentos, paquetes y cajas. Clasificamos su carga con el mayor cuidado para que llegue en perfectas condiciones.
               </p>
             </div>
             <!-- Service 3 -->
@@ -468,8 +503,7 @@
                 Carga Pesada
               </h3>
               <p class="font-body-md text-body-md text-on-surface-variant">
-                Transporte de mercadería, herramientas y bultos voluminosos.
-                Contamos con el espacio necesario.
+                Transporte de mercadería, herramientas y bultos voluminosos. Contamos con el espacio y equipamiento necesario.
               </p>
             </div>
           </div>
@@ -844,7 +878,7 @@
             Transporte Lucero
           </p>
           <p class="text-surface-variant dark:text-on-surface-variant mt-xs">
-            © 2024 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos
+            © 2026 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos
             reservados.
           </p>
         </div>
