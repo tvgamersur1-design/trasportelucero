@@ -4,7 +4,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Ferreñafe Express | Transporte y Encomiendas</title>
+    <title>Transporte Lucero | Ferreñafe - Uyurpampa | Pasajeros y Encomiendas</title>
+    <meta name="description" content="Transporte de pasajeros y encomiendas de Ferreñafe a Uyurpampa. Ruta por Chumbiaura, Moyán, Laquipampa, Incahuasi, Marayhuca, Cañaris, Susupamapa, Ayamachay. Salidas diarias.">
+    <meta name="keywords" content="transporte ferreñafe, encomiendas uyurpampa, bus ferreñafe uyurpampa, transporte lambayeque, chumbiaura, moyán, laquipampa, incahuasi, marayhuca, cañaris, susupamapa, ayamachay, transporte sierra, encomiendas lambayeque, bus lambayeque, transporte pasajeros lambayeque, carga sierra lambayeque, viajes ferreñafe, pasajeros uyurpampa, turismo lambayeque">
+    <meta name="author" content="Transporte Lucero">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..700&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
@@ -138,53 +141,78 @@
   <body
     class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim"
   >
-    <!-- TopNavBar -->
+     <!-- TopNavBar -->
     <header
       class="w-full top-0 sticky bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none border-b border-outline-variant dark:border-outline z-50"
     >
       <div
-        class="flex justify-between items-center h-16 px-margin-desktop max-w-[2000px] mx-auto"
+        class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-[2000px] mx-auto"
       >
-        <div
-          class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:opacity-80"
-        >
-          Transporte Lucero
-        </div>
+        <a href="index.html" class="flex items-center gap-sm cursor-pointer active:opacity-80">
+          <img src="img/logo.svg" alt="Transporte Lucero" class="h-10 md:h-14 w-auto">
+        </a>
         <nav class="hidden md:flex items-center gap-xl">
-          <a
-            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#"
-            >Inicio</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#servicios"
-            >Servicios</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#rutas"
-            >Rutas</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#nosotros"
-            >Nosotros</a
-          >
-          <a
-            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200"
-            href="#contacto"
-            >Contacto</a
-          >
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">
+            <span class="material-symbols-outlined text-[20px]">home</span> Inicio
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#servicios">
+            <span class="material-symbols-outlined text-[20px]">directions_bus</span> Servicios
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#rutas">
+            <span class="material-symbols-outlined text-[20px]">route</span> Rutas
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#nosotros">
+            <span class="material-symbols-outlined text-[20px]">info</span> Nosotros
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#contacto">
+            <span class="material-symbols-outlined text-[20px]">mail</span> Contacto
+          </a>
         </nav>
-        <button
-          onclick="openContactModal()"
-          class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-fixed-variant transition-all active:scale-95"
-        >
-          Cotizar Envío
+        <button onclick="openContactModal()" class="hidden md:inline-flex bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-fixed-variant transition-all active:scale-95">
+          Cotizar Viaje/Envío
+        </button>
+        <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-highest transition-colors" aria-label="Abrir menú">
+          <span class="material-symbols-outlined text-on-surface text-[28px]">menu</span>
         </button>
       </div>
     </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer hidden">
+      <div class="mobile-drawer-backdrop" onclick="closeMobileDrawer()"></div>
+      <div class="mobile-drawer-panel">
+        <div class="flex items-center justify-between px-md py-md border-b border-outline-variant">
+          <a href="index.html" class="flex items-center gap-sm">
+            <img src="img/logo.svg" alt="Transporte Lucero" class="h-10 w-auto">
+          </a>
+          <button onclick="closeMobileDrawer()" class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-highest transition-colors" aria-label="Cerrar menú">
+            <span class="material-symbols-outlined text-on-surface text-[28px]">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-xs py-sm">
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="#">
+            <span class="material-symbols-outlined text-on-surface-variant">home</span> Inicio
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="#servicios">
+            <span class="material-symbols-outlined text-on-surface-variant">directions_bus</span> Servicios
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="#rutas">
+            <span class="material-symbols-outlined text-on-surface-variant">route</span> Rutas
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="#nosotros">
+            <span class="material-symbols-outlined text-on-surface-variant">info</span> Nosotros
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="#contacto">
+            <span class="material-symbols-outlined text-on-surface-variant">mail</span> Contacto
+          </a>
+        </nav>
+        <div class="px-md py-md border-t border-outline-variant">
+          <button onclick="openContactModal(); closeMobileDrawer();" class="w-full bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-fixed-variant transition-all active:scale-95 text-center">
+            Cotizar Viaje/Envío
+          </button>
+        </div>
+      </div>
+    </div>
     <main>
       <!-- Hero Section -->
       <section
@@ -215,11 +243,11 @@
             <p
               class="font-body-lg text-body-lg text-surface-container max-w-lg"
             >
-              Conectamos la ciudad con el corazón de la sierra lambayecana. Transporte seguro de pasajeros y envío de encomiendas con 10 años de experiencia y puntualidad garantizada.
+              Conectamos la ciudad con el corazón de la sierra lambayecana. Transporte seguro de pasajeros y envío de encomiendas con 10 años de experiencia y puntualidad garantizada. Ruta por Chumbiaura, Moyán, Laquipampa, Incahuasi, Marayhuca, Cañaris, Susupamapa y Ayamachay.
             </p>
             <div class="flex flex-col sm:flex-row gap-md mt-lg">
               <a
-                href="https://wa.me/51980333214?text=Hola,%20quisiera%20cotizar%20un%20envío"
+                href="https://wa.me/51980333214?text=Hola,%20quisiera%20cotizar%20un%20viaje%20o%20envío"
                 target="_blank"
                 class="bg-primary hover:bg-primary-fixed text-on-primary hover:text-on-primary-fixed px-xl py-md rounded-xl font-headline-md text-headline-md shadow-lg transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-sm cta-shimmer"
               >
@@ -228,7 +256,7 @@
                   style="font-variation-settings: &quot;FILL&quot; 1"
                   >send</span
                 >
-                Cotizar Envío
+                Cotizar Viaje/Envío
               </a>
               <a
                 id="heroWhatsAppBtn"
@@ -352,7 +380,7 @@
             <div class="flex flex-col gap-sm stat-item fade-in-scroll">
               <p class="font-display-lg text-display-lg xl:text-[64px] xl:leading-[72px] text-primary">5,200+</p>
               <p class="font-label-md text-on-surface-variant">
-                Envíos Entregados
+                Viajes y Envíos Realizados
               </p>
             </div>
             <div
@@ -498,8 +526,22 @@
                     </p>
                   </div>
                 </div>
-                <!-- Parada 4 -->
+                <!-- Caseríos intermedios -->
                 <div class="flex gap-lg relative fade-in-scroll delay-300">
+                  <div class="flex-shrink-0 w-12 h-12 bg-outline text-white rounded-full flex items-center justify-center z-10">
+                    <span class="material-symbols-outlined">route</span>
+                  </div>
+                  <div>
+                    <h4 class="font-headline-md text-headline-md text-on-surface">
+                      Zonas Intermedias
+                    </h4>
+                    <p class="font-body-md text-on-surface-variant mt-xs">
+                      Chumbiaura · Laquipampa · Incahuasi · Marayhuca · Cañaris · Susupamapa · Ayamachay
+                    </p>
+                  </div>
+                </div>
+                <!-- Parada 4 -->
+                <div class="flex gap-lg relative fade-in-scroll delay-400">
                   <div class="flex-shrink-0 w-12 h-12 bg-secondary text-on-secondary rounded-full flex items-center justify-center z-10">
                     <span class="material-symbols-outlined">flag</span>
                   </div>
@@ -831,13 +873,12 @@
               class="relative z-10 text-on-primary flex flex-col gap-md text-center lg:text-left"
             >
               <h2 class="font-headline-lg text-headline-lg lg:text-[40px]">
-                ¿Listo para enviar tu encomienda?
+                ¿Listo para viajar o enviar tu encomienda?
               </h2>
               <p
                 class="font-body-lg text-body-lg text-on-primary-container max-w-xl"
               >
-                Contáctanos ahora mismo y obtén una cotización inmediata según
-                el tamaño y peso de tu envío.
+                Contáctanos ahora mismo para reservar tu viaje o cotizar el envío de tu paquete.
               </p>
               <div class="flex flex-wrap gap-md mt-sm">
                 <a
@@ -965,7 +1006,7 @@
           </h2>
           <p class="font-body-lg text-body-lg text-on-surface-variant">
             Visítanos en nuestra oficina principal en Ferreñafe para gestionar
-            tus envíos personalmente.
+            tus viajes y envíos personalmente.
           </p>
           <a 
             href="https://maps.app.goo.gl/H7o6w1ZRQybjH1zM7" 
@@ -1025,7 +1066,7 @@
               Servicios
             </p>
             <ul class="space-y-sm">
-              <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Transporte de Pasajeros</a></li>
+              <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Viajes de Pasajeros</a></li>
               <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Envío de Encomiendas</a></li>
               <li><a href="#servicios" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Carga Pesada</a></li>
               <li><a href="#rutas" class="text-surface-variant dark:text-on-surface-variant hover:text-inverse-primary transition-colors">Nuestras Rutas</a></li>

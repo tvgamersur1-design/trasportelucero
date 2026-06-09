@@ -70,6 +70,25 @@ function updateNextDeparture() {
     }
 }
 
+// Funciones para el drawer móvil
+function openMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    if (!drawer) return;
+    drawer.classList.remove('hidden');
+    requestAnimationFrame(() => drawer.classList.add('open'));
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    setTimeout(() => {
+        drawer.classList.add('hidden');
+        document.body.style.overflow = '';
+    }, 300);
+}
+
 // Funciones para el modal de contacto
 function openContactModal() {
     const modal = document.getElementById('contactModal');
@@ -179,6 +198,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Mobile drawer toggle
+    const menuToggle = document.getElementById('menuToggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', openMobileDrawer);
+    }
+
+    // Cerrar drawer con ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMobileDrawer();
+            closeContactModal();
+        }
+    });
+
     // Cerrar modal al hacer clic fuera
     const contactModal = document.getElementById('contactModal');
     if (contactModal) {
@@ -188,13 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Cerrar modal con tecla ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeContactModal();
-        }
-    });
 
     // Iniciar carrusel automático
     const carousel = document.getElementById('fleetCarousel');

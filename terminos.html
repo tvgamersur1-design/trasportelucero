@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Términos de Servicio | Transporte Lucero</title>
+    <meta name="description" content="Términos y condiciones del servicio de transporte y encomiendas de Transporte Lucero. Ferreñafe - Uyurpampa.">
+    <meta name="keywords" content="transporte ferreñafe, encomiendas uyurpampa, términos servicio, transporte lambayeque, chumbiaura, moyán, laquipampa, incahuasi">
+    <meta name="author" content="Transporte Lucero">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -59,22 +62,72 @@
   <body class="bg-background text-on-background font-body-md">
     <!-- Header -->
     <header class="w-full top-0 sticky bg-surface shadow-sm border-b border-outline-variant z-50">
-      <div class="flex justify-between items-center h-16 px-margin-desktop max-w-[2000px] mx-auto">
-        <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary cursor-pointer active:opacity-80">
-          Transporte Lucero
+      <div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-[2000px] mx-auto">
+        <a href="index.html" class="flex items-center gap-sm cursor-pointer active:opacity-80">
+          <img src="img/logo.svg" alt="Transporte Lucero" class="h-10 md:h-14 w-auto">
         </a>
         <nav class="hidden md:flex items-center gap-xl">
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Inicio</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#servicios">Servicios</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#rutas">Rutas</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#nosotros">Nosotros</a>
-          <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#contacto">Contacto</a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">
+            <span class="material-symbols-outlined text-[20px]">home</span> Inicio
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#servicios">
+            <span class="material-symbols-outlined text-[20px]">directions_bus</span> Servicios
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#rutas">
+            <span class="material-symbols-outlined text-[20px]">route</span> Rutas
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#nosotros">
+            <span class="material-symbols-outlined text-[20px]">info</span> Nosotros
+          </a>
+          <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html#contacto">
+            <span class="material-symbols-outlined text-[20px]">mail</span> Contacto
+          </a>
         </nav>
-        <a href="index.html#contacto" class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95">
-          Cotizar Envío
+        <a href="index.html#contacto" class="hidden md:inline-flex bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95">
+          Cotizar Viaje/Envío
         </a>
+        <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-highest transition-colors" aria-label="Abrir menú">
+          <span class="material-symbols-outlined text-on-surface text-[28px]">menu</span>
+        </button>
       </div>
     </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer hidden">
+      <div class="mobile-drawer-backdrop" onclick="closeMobileDrawer()"></div>
+      <div class="mobile-drawer-panel">
+        <div class="flex items-center justify-between px-md py-md border-b border-outline-variant">
+          <a href="index.html" class="flex items-center gap-sm">
+            <img src="img/logo.svg" alt="Transporte Lucero" class="h-10 w-auto">
+          </a>
+          <button onclick="closeMobileDrawer()" class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-highest transition-colors" aria-label="Cerrar menú">
+            <span class="material-symbols-outlined text-on-surface text-[28px]">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-xs py-sm">
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="index.html">
+            <span class="material-symbols-outlined text-on-surface-variant">home</span> Inicio
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="index.html#servicios">
+            <span class="material-symbols-outlined text-on-surface-variant">directions_bus</span> Servicios
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="index.html#rutas">
+            <span class="material-symbols-outlined text-on-surface-variant">route</span> Rutas
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="index.html#nosotros">
+            <span class="material-symbols-outlined text-on-surface-variant">info</span> Nosotros
+          </a>
+          <a onclick="closeMobileDrawer()" class="mobile-drawer-link" href="index.html#contacto">
+            <span class="material-symbols-outlined text-on-surface-variant">mail</span> Contacto
+          </a>
+        </nav>
+        <div class="px-md py-md border-t border-outline-variant">
+          <a href="index.html#contacto" class="block w-full bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95 text-center">
+            Cotizar Viaje/Envío
+          </a>
+        </div>
+      </div>
+    </div>
 
     <main class="py-xl xl:py-2xl">
       <div class="max-w-4xl mx-auto px-margin-desktop">
