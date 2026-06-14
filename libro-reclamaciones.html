@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Libro de Reclamaciones | Transporte Lucero</title>
-    <meta name="description" content="Libro de Reclamaciones de Transporte Lucero. Registra tu queja o reclamo sobre el servicio de transporte y encomiendas Ferreñafe - Uyurpampa.">
+    <title>Libro de Reclamaciones | Simoncito SAC</title>
+    <meta name="description" content="Libro de Reclamaciones de Simoncito SAC. Registra tu queja o reclamo sobre el servicio de transporte y encomiendas Ferreñafe - Uyurpampa.">
     <meta name="keywords" content="transporte ferreñafe, encomiendas uyurpampa, libro reclamaciones, transporte lambayeque, queja transporte, chumbiaura, moyán, laquipampa">
-    <meta name="author" content="Transporte Lucero">
+    <meta name="author" content="Simoncito SAC">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400..700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -56,6 +56,9 @@
               xs: "4px",
               xl: "48px",
             },
+            screens: {
+              "xs": "360px",
+            },
           },
         },
       };
@@ -67,6 +70,10 @@
       <div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-[2000px] mx-auto">
         <a href="index.html" class="flex items-center gap-sm cursor-pointer active:opacity-80">
           <img src="img/logo.svg" alt="Transporte Lucero" class="h-10 md:h-14 w-auto">
+          <div class="relative h-10 md:h-14 flex items-center">
+            <img src="img/simoncito_SAC.svg" alt="SIMONCITO SAC" class="h-full w-auto relative z-10">
+            <span class="absolute bottom-[8%] left-[5%] text-on-surface-variant text-[12px] md:text-[16px] leading-none whitespace-nowrap z-20">Transporte de pasajeros</span>
+          </div>
         </a>
         <nav class="hidden md:flex items-center gap-xl">
           <a class="flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">
@@ -101,6 +108,10 @@
         <div class="flex items-center justify-between px-md py-md border-b border-outline-variant">
           <a href="index.html" class="flex items-center gap-sm">
             <img src="img/logo.svg" alt="Transporte Lucero" class="h-10 w-auto">
+            <div class="relative h-10 flex items-center">
+              <img src="img/simoncito_SAC.svg" alt="SIMONCITO SAC" class="h-full w-auto relative z-10">
+              <span class="absolute bottom-[8%] left-[5%] text-on-surface-variant text-[12px] leading-none whitespace-nowrap z-20">Transporte de pasajeros</span>
+            </div>
           </a>
           <button onclick="closeMobileDrawer()" class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-surface-container-highest transition-colors" aria-label="Cerrar menú">
             <span class="material-symbols-outlined text-on-surface text-[28px]">close</span>
@@ -149,11 +160,11 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
             <div class="flex items-center gap-sm">
               <span class="material-symbols-outlined text-primary">business</span>
-              <span class="font-body-md text-on-surface-variant">Transporte Lucero S.A.C.</span>
+              <span class="font-body-md text-on-surface-variant">EMPRESA TRANSP. SIMONCITO SAC</span>
             </div>
             <div class="flex items-center gap-sm">
               <span class="material-symbols-outlined text-primary">badge</span>
-              <span class="font-body-md text-on-surface-variant">RUC: 20512345678</span>
+              <span class="font-body-md text-on-surface-variant">RUC: 20602718582</span>
             </div>
             <div class="flex items-center gap-sm">
               <span class="material-symbols-outlined text-primary">location_on</span>
@@ -269,7 +280,7 @@
       <div class="max-w-[2000px] mx-auto px-margin-desktop py-xl">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mb-xl">
           <div>
-            <p class="font-headline-md text-headline-md font-bold text-inverse-primary mb-md">Transporte Lucero</p>
+            <p class="font-headline-md text-headline-md font-bold text-inverse-primary mb-md uppercase tracking-wider">Simoncito SAC</p>
             <p class="text-surface-variant mb-md">Conectamos Ferreñafe con Uyurpampa. Transporte seguro de pasajeros y encomiendas con más de 10 años de experiencia.</p>
           </div>
           <div>
@@ -299,7 +310,7 @@
           </div>
         </div>
         <div class="border-t border-white/10 pt-lg flex flex-col md:flex-row justify-between items-center gap-md">
-          <p class="text-surface-variant">© 2026 Transporte Lucero - Ferreñafe - Uyurpampa. Todos los derechos reservados.</p>
+          <p class="text-surface-variant">© 2026 Simoncito SAC - Ferreñafe - Uyurpampa. Todos los derechos reservados.</p>
           <div class="flex flex-wrap justify-center gap-lg">
             <a class="text-surface-variant hover:text-inverse-primary transition-colors" href="privacidad.html">Privacidad</a>
             <a class="text-surface-variant hover:text-inverse-primary transition-colors" href="terminos.html">Términos de Servicio</a>

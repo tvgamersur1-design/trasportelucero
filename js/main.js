@@ -45,7 +45,7 @@ function updateNextDeparture() {
     
     const nextDep = calculateNextDeparture();
     
-    // Actualizar versión desktop
+    // Actualizar tarjeta desktop
     if (departureElement) {
         departureElement.textContent = nextDep.text;
         departureElement.classList.add('updated');
@@ -54,7 +54,7 @@ function updateNextDeparture() {
         }, 500);
     }
     
-    // Actualizar versión móvil
+    // Actualizar tarjeta móvil
     if (departureElementMobile) {
         departureElementMobile.textContent = nextDep.text;
         departureElementMobile.classList.add('updated');
@@ -269,3 +269,82 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// Carrusel de Flota (móvil)
+let fleetCurrent = 0;
+let fleetTimer;
+const fleetSlides = document.querySelectorAll('.fleet-slide');
+const fleetDots = document.querySelectorAll('.fleet-dot');
+const fleetProgressBar = document.getElementById('fleetProgressBar');
+const FLEET_INTERVAL = 3000;
+
+function fleetShow(index) {
+    fleetSlides.forEach(s => s.classList.remove('active'));
+    fleetDots.forEach(d => d.classList.remove('active'));
+    fleetCurrent = (index + fleetSlides.length) % fleetSlides.length;
+    fleetSlides[fleetCurrent].classList.add('active');
+    fleetDots[fleetCurrent].classList.add('active');
+    startProgressBar();
+}
+
+function fleetNext() {
+    fleetShow(fleetCurrent + 1);
+    resetFleetTimer();
+}
+
+function fleetPrev() {
+    fleetShow(fleetCurrent - 1);
+    resetFleetTimer();
+}
+
+function fleetGoTo(i) {
+    fleetShow(i);
+    resetFleetTimer();
+}
+
+function startProgressBar() {
+    if (!fleetProgressBar) return;
+    fleetProgressBar.classList.remove('animate');
+    fleetProgressBar.style.transition = 'none';
+    fleetProgressBar.style.width = '0%';
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            fleetProgressBar.style.transition = `width ${FLEET_INTERVAL}ms linear`;
+            fleetProgressBar.classList.add('animate');
+        });
+    });
+}
+
+function resetFleetTimer() {
+    clearInterval(fleetTimer);
+    fleetTimer = setInterval(fleetNext, FLEET_INTERVAL);
+}
+
+if (fleetSlides.length > 0) {
+    fleetTimer = setInterval(fleetNext, FLEET_INTERVAL);
+    startProgressBar();
+
+    const fleetEl = document.getElementById('fleetSlides');
+    if (fleetEl) {
+        let touchStartX = 0;
+
+        fleetEl.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(fleetTimer);
+            if (fleetProgressBar) {
+                fleetProgressBar.style.transition = 'none';
+                fleetProgressBar.classList.remove('animate');
+            }
+        }, { passive: true });
+
+        fleetEl.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? fleetNext() : fleetPrev();
+            } else {
+                startProgressBar();
+                resetFleetTimer();
+            }
+        }, { passive: true });
+    }
+}

@@ -15,6 +15,17 @@
     background: linear-gradient(to right, rgba(74, 124, 89, 0.9), rgba(74, 124, 89, 0.4), transparent);
 }
 
+@media (max-width: 1023px) {
+    .gradient-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(74, 124, 89, 0.2) 0%,
+            rgba(74, 124, 89, 0.65) 40%,
+            rgba(74, 124, 89, 0.95) 100%
+        );
+    }
+}
+
 /* Animación para actualización de próxima salida */
 #nextDeparture.updated {
     animation: pulse-update 0.5s ease;
@@ -201,6 +212,38 @@
     }
 }
 
+/* Pantallas extra pequeñas 230-360px */
+@media (max-width: 360px) {
+    .px-margin-mobile {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .font-headline-lg,
+    [class*="text-headline-lg"] {
+        font-size: 24px !important;
+        line-height: 30px !important;
+    }
+
+    .font-headline-md,
+    [class*="text-headline-md"] {
+        font-size: 20px !important;
+        line-height: 26px !important;
+    }
+
+    .font-body-lg,
+    [class*="text-body-lg"] {
+        font-size: 15px !important;
+        line-height: 22px !important;
+    }
+
+    .font-body-md,
+    [class*="text-body-md"] {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+}
+
 /* Hacer el carrusel touch-friendly */
 #fleetCarousel {
     -webkit-tap-highlight-color: transparent;
@@ -215,6 +258,94 @@
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
+}
+
+/* Carrusel de flota móvil */
+.fleet-slide {
+    display: none;
+}
+
+.fleet-slide.active {
+    display: block;
+    animation: fleet-slide-in 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fleet-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fleet-arrow-mobile {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #c4c8bc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4a7c59;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.fleet-arrow-mobile:hover {
+    background: #4a7c59;
+    color: #fff;
+    border-color: #4a7c59;
+}
+
+.fleet-arrow-mobile:active {
+    transform: scale(0.92);
+}
+
+.fleet-arrow-mobile .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.fleet-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c4c8bc;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.fleet-dot.active {
+    background: #4a7c59;
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* Barra de progreso del carrusel */
+.fleet-progress {
+    height: 3px;
+    background: #e4e0d8;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.fleet-progress-bar {
+    height: 100%;
+    background: #4a7c59;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 3s linear;
+}
+
+.fleet-progress-bar.animate {
+    width: 100%;
 }
 
 /* Mejorar la visibilidad de los controles en móvil */
