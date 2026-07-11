@@ -18,10 +18,6 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
     <link href="css/styles.css" rel="stylesheet" />
     <script id="tailwind-config">
       tailwind.config = {
@@ -228,11 +224,17 @@
         class="relative min-h-[480px] sm:min-h-[550px] lg:min-h-[600px] xl:min-h-[700px] flex items-center overflow-hidden bg-primary"
       >
         <div class="absolute inset-0 z-0">
-          <img
-            alt="Transporte Ferreñafe Uyurpampa - Toyota Hiace 5L"
-            class="w-full h-full object-cover"
-            src="img/fotocombi5L.png"
-          />
+          <picture>
+            <source srcset="img/fotocombi5L.webp" type="image/webp">
+            <img
+              alt="Transporte Ferreñafe Uyurpampa - Toyota Hiace 5L"
+              class="w-full h-full object-cover"
+              src="img/fotocombi5L.png"
+              width="1920" height="1080"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
           <div class="absolute inset-0 gradient-overlay"></div>
         </div>
         <div
@@ -572,7 +574,10 @@
           <div class="hidden md:grid md:grid-cols-2 gap-lg xl:gap-xl">
             <div class="group overflow-hidden rounded-2xl bg-surface-container-lowest border border-outline-variant hover-lift fade-in-scroll">
               <div class="aspect-video overflow-hidden">
-                <img alt="Toyota Hiace 5L" class="w-full h-full object-cover fleet-image" src="img/foto2detoyota5L.png" />
+                <picture>
+                  <source srcset="img/foto2detoyota5L.webp" type="image/webp">
+                  <img alt="Toyota Hiace 5L" class="w-full h-full object-cover fleet-image" src="img/foto2detoyota5L.png" width="800" height="450" loading="lazy" decoding="async" />
+                </picture>
               </div>
               <div class="p-lg xl:p-xl">
                 <h3 class="font-headline-md xl:text-[22px] text-on-surface">Toyota Hiace 5L</h3>
@@ -581,7 +586,10 @@
             </div>
             <div class="group overflow-hidden rounded-2xl bg-surface-container-lowest border border-outline-variant hover-lift fade-in-scroll delay-200">
               <div class="aspect-video overflow-hidden">
-                <img alt="Toyota Hilux 4x4" class="w-full h-full object-cover fleet-image" src="img/camioneta.png" />
+                <picture>
+                  <source srcset="img/camioneta.webp" type="image/webp">
+                  <img alt="Toyota Hilux 4x4" class="w-full h-full object-cover fleet-image" src="img/camioneta.png" width="800" height="450" loading="lazy" decoding="async" />
+                </picture>
               </div>
               <div class="p-lg xl:p-xl">
                 <h3 class="font-headline-md xl:text-[22px] text-on-surface">Toyota Hilux 4x4</h3>
@@ -595,7 +603,10 @@
               <div class="fleet-slide active">
                 <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
                   <div class="aspect-[4/3] overflow-hidden">
-                    <img alt="Toyota Hiace 5L" class="w-full h-full object-cover" src="img/foto2detoyota5L.png" />
+                    <picture>
+                      <source srcset="img/foto2detoyota5L.webp" type="image/webp">
+                      <img alt="Toyota Hiace 5L" class="w-full h-full object-cover" src="img/foto2detoyota5L.png" width="800" height="600" loading="lazy" decoding="async" />
+                    </picture>
                   </div>
                   <div class="p-md">
                     <h3 class="font-headline-md text-on-surface mb-xs">Toyota Hiace 5L</h3>
@@ -606,7 +617,10 @@
               <div class="fleet-slide">
                 <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
                   <div class="aspect-[4/3] overflow-hidden">
-                    <img alt="Toyota Hilux 4x4" class="w-full h-full object-cover" src="img/camioneta.png" />
+                    <picture>
+                      <source srcset="img/camioneta.webp" type="image/webp">
+                      <img alt="Toyota Hilux 4x4" class="w-full h-full object-cover" src="img/camioneta.png" width="800" height="600" loading="lazy" decoding="async" />
+                    </picture>
                   </div>
                   <div class="p-md">
                     <h3 class="font-headline-md text-on-surface mb-xs">Toyota Hilux 4x4</h3>
