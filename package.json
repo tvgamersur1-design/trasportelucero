@@ -1,0 +1,26 @@
+{
+  "name": "viajes",
+  "version": "1.0.0",
+  "description": "Sitio web estático para Transporte Lucero, servicio de transporte y encomiendas entre Ferreñafe y Uyurpampa.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i src/input.css -o css/tailwind.min.css --minify",
+    "watch:css": "npx tailwindcss -i src/input.css -o css/tailwind.min.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvgamersur1-design/trasportelucero.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tvgamersur1-design/trasportelucero/issues"
+  },
+  "homepage": "https://github.com/tvgamersur1-design/trasportelucero#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^3.4.19"
+  }
+}
